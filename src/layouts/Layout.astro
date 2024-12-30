@@ -1,22 +1,44 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import Settings from "../settings.json";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+import "../styles/index.css";
+
+interface Props {
+  title: string;
+  metaTitle: string;
+  metaDescription?: string;
+}
+
+const { title, metaTitle, metaDescription } = Astro.props;
+---
+
+<html lang={Settings.language}>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta property="og:title" content={metaTitle} />
+    {
+      metaDescription != undefined && (
+        <meta property="og:description" content={metaDescription} />
+      )
+    }
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <style>
+      @font-face {
+        font-family: "Nunito_Sans";
+        src: url("/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf")
+          format("truetype");
+      }
+    </style>
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="mx-auto max-w-xl lg:max-w-2xl py-12 px-4">
+      <slot />
+    </div>
+  </body>
+</html>

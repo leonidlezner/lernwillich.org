@@ -1,11 +1,48 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Item from "../components/Item.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="#lernwillich"
+  metaTitle="#lernwillich"
+  metaDescription="#lernwillich Prinzipien für soziales Lernen"
+>
+  <h1 class="text-6xl font-bold">
+    #lern<span class="text-prime">will</span>ich
+  </h1>
+
+  <h2 class="text-lg mt-12 mb-4">Unsere Prinzipien für soziales Lernen:</h2>
+
+  <ol class="space-y-6">
+    <Item title="Offenheit und Zugänglichkeit" number="1"
+      >Jede:r kann auf Informationen und Tools zugreifen und mitmachen, ohne
+      dass sie:er dazu eine Erlaubnis braucht. Jede:r kann ihr:sein Wissen
+      beitragen.</Item
+    >
+
+    <Item title="Vielfalt an Ideen und Meinungen" number="2"
+      >Jede Frage, jeder Beitrag, jedes Thema und auch kritische
+      Auseinandersetzung ist willkommen und wertvoll. Wir schaffen einen
+      respektvollen Umgang für gemeinsames Lernen.</Item
+    >
+
+    <Item title="Alle sind Schüler:innen und Lehrer:innen" number="3"
+      >Jede:r kann auf einem Gebiet Anfänger:in und auf einem anderen Gebiet
+      Expert:in sein. Als Anfänger:in darf man alle Fragen stellen und das
+      fehlende Wissen einholen. Als Expert:in hat man den Auftrag das Wissen zu
+      öffnen.</Item
+    >
+
+    <Item title="Proaktiv Wissen und Lernerfahrungen teilen" number="4">
+      Neue Informationen und Erkenntnisse zu teilen ist unsere Grundmotivation.
+    </Item>
+
+    <Item title="Beziehungen stärken durch Anerkennung" number="5">
+      Wir stärken die Verbundenheit durch wertschätzenden Austausch und
+      konstruktives Feedback.</Item
+    >
+  </ol>
+
+  <p class="mt-10">Von Elena und Leonid Lezner</p>
 </Layout>
